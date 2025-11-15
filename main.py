@@ -6,6 +6,10 @@ from app.vectorstore_utils import create_faiss_index,retrieve_relevant_docs
 from app.chat_utils import get_chat_model,ask_chat_model
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 import time
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
 
 #Set page configuration
 st.set_page_config(
@@ -122,7 +126,7 @@ with st.sidebar:
                 st.session_state.vector_store = vector_store
 
                 #Initialize chat model
-                chat_model = get_chat_model(EURI_API_KEY)
+                chat_model = get_chat_model(os.getenv("EURI_API_KEY"))
                 st.session_state.chat_model = chat_model
 
                 st.success("Document processing completed!")
