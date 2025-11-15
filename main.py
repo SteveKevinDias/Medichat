@@ -4,7 +4,7 @@ from app.pdf_utils import extract_text_from_pdf
 from app.config import EURI_API_KEY
 from app.vectorstore_utils import create_faiss_index,retrieve_relevant_docs
 from app.chat_utils import get_chat_model,ask_chat_model
-from langchain.text_splitter import RecursiveCharacterTextSplitter
+from langchain_text_splitters import RecursiveCharacterTextSplitter
 import time
 
 #Set page configuration
